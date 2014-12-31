@@ -1,29 +1,18 @@
 <?php
 
+$exp = time() + 86400;
+$exp_unset = time() - 84600;
 
-$levels = array(
-	1 => array(
-		'name' => 'Level 1',
-		'desc' => 'this is the first level'
-	),
-	2 => array(
-		'name' => 'Level 2',
-		'desc' => 'You are at level 2!'
-	),
-	3 => array(
-		'name' => 'Level 3',
-		'desc' => 'this is the final level',
-		'points' => array (1 => 1000)
-	)
-);
+//setcookie("age", 19, $exp);
 
-$levels[4] = '';
+//echo $_COOKIE["age"] . " is " . $_COOKIE["name"] . "<br>";
 
-echo '<pre>', print_r($levels, true), '</pre>';
-echo $levels[3]['points'][1];
+setcookie("age","",$exp_unset);
 
-for ($i=0; $levels.length; $i++) {
-	echo $levels[$i]['name'] . " ";
+if (isset($_COOKIE["age"])) {
+	echo "Cookie is set";
 }
-
+else {
+	echo "Cookie is not set";
+}
 ?>
